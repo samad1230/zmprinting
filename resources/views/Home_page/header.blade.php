@@ -69,7 +69,7 @@
                 <div class="clearfix">
                     
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="index-2.html"><img src="Client_layouts/images/logo.png" alt="" title=""></a></div>
+                        <div class="logo"><a href="{{ url('/') }}"><img src="Client_layouts/images/logo.png" alt="" title=""></a></div>
                     </div>
                     
                     <div class="pull-right upper-right">
@@ -89,7 +89,7 @@
                                     
                                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                                         <ul class="navigation clearfix">
-                                            <li class="current"><a href="#">Home</a>
+                                            <li class="current"><a href="{{ url('/') }}">Home</a>
                                             </li>
                                             <li class="dropdown"><a href="#">Products</a>
                                                 <ul>

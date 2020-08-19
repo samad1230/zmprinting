@@ -3,7 +3,7 @@
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <a href="index-2.html" class="img-responsive"><img src="Client_layouts/images/logo-small.png" alt="" title=""></a>
+                    <a href="{{ url('/') }}" class="img-responsive"><img src="Client_layouts/images/logo-small.png" alt="" title=""></a>
                 </div>
                 
                 <!--Right Col-->
@@ -18,7 +18,7 @@
                         
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
                            <ul class="navigation clearfix">
-                                <li class="current"><a href="#">Home</a></li>
+                                <li class="current"><a href="{{ url('/') }}">Home</a></li>
                                 <li class="dropdown"><a href="#">Products</a>
                                     <ul>
                                         <li><a href="about.html">Baseball Cap</a></li>

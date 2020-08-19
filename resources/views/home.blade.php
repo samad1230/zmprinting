@@ -10,12 +10,12 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <h5>Well Come to Dashboard</h5>
+                            <h5>Well Come to Dashboared</h5>
                             <div class="header-button">
                                 <div class="account-wrap">
                                     <div class="">
                                         <div class="content">
-                                            <a class="" href="#">john doe</a>
+                                            <a class="" href="">{{Auth::user()->name}}</a>
                                         </div>
                                     </div>
                                 </div>

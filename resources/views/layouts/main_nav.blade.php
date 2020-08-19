@@ -9,6 +9,8 @@
                     <ul class="list-unstyled navbar__list">
                         <li><a href="{{ route('home') }}"> <i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
                         <li><a href="{{ route('aboutus') }}"><i class="fas fa-chart-bar"></i>About Us</a></li>
+                        <li><a href="{{ route('sliderimage') }}"><i class="fas fa-chart-bar"></i>Slider</a></li>
+                        <li><a href="{{ route('product') }}"><i class="fas fa-chart-bar"></i>Product</a></li>
 
                         <li class="has-sub">
                             <a class="js-arrow" href="#">

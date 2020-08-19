@@ -2,6 +2,30 @@
 
 @section('content')
 
+    
+     <section class="main-slider">
+        <div class="main-slider-carousel owl-carousel owl-theme">
+            @foreach ($slider as $row) 
+            <div class="slide" style="background-image:url({{ URL::to($row->slider_image)}})">
+                <div class="auto-container">
+                    <div class="content clearfix">
+                         <h2>{{$row->slider_head}}</h2>
+                        <div class="text">{{$row->slider_details}}</div>
+                        <div class="link-box">
+                            <a href="#" class="theme-btn btn-style-one">Our Service</a> <a href="#" class="theme-btn btn-style-three">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        <div class="left-title">Printing & Design</div>
+        <div class="mouse-btn-down scroll-to-target" data-target=".welcome-section"></div>
+  </section>         
+
+
+
+
     <section class="welcome-section">
         <div class="auto-container">
             <div class="row clearfix">
@@ -12,6 +36,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <!-- Sec Title -->
@@ -82,37 +107,21 @@
                     <h2>Products</h2>
                 </div>
             </div>
-            
             <div class="four-item-carousel owl-carousel owl-theme">
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="card">
-                            <img src="Client_layouts/images/resource/project-1.jpg" alt="" />
-                            <div class="card-body">
-                                <h5 class="card-title product_card_title">Base Ball Cap</h5> 
-                                <p><a href="#" class="btn btn-primary btn-sm custom_btn_color">View More</a></p>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-block">
-                    <div class="product_grid">
-                        <div class="card">
-                            <img src="Client_layouts/images/resource/project-1.jpg" class="card-img-top" alt="Base Ball Cap">
-                            
-                            <div class="card-body">
-                                <h5 class="card-title product_card_title">Base Ball Cap</h5> 
-                                <p><a href="products/baseball-cap/index.html" class="btn btn-primary btn-sm custom_btn_color">View More</a></p>
+                @foreach ($product as $pd_data)
+                    <div class="project-block">
+                        <div class="inner-box">
+                            <div class="card">
+                                <img src="{{ url($pd_data->pd_image) }}" alt="" />
+                                <div class="card-body">
+                                    <h5 class="card-title product_card_title">{{$pd_data->pd_name}}</h5> 
+                                    <p><a href="#" class="btn btn-primary btn-sm custom_btn_color">View More</a></p>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                </div>
-
+                @endforeach
             </div>
-            
         </div>
     </section>
 
@@ -218,7 +227,7 @@
     <!-- End Services Section -->
     
     <!-- Call To Action Section -->
-    <section class="call-to-action-section" style="background-image:url(Client_layouts/images/background/1.jpg);">
+    <section class="call-to-action-section" style="background-image:url(media/slider/190820_182118.jpg);">
         <div class="auto-container">
             <h2>Get A <span class="theme_color">Solutions</span> For All <br> Printing</h2>
             <div class="text">We believe strongly that we can and must do things differently. <br> Our aim is to bring you news, perspectives.</div>
