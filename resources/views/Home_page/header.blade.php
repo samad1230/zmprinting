@@ -53,8 +53,8 @@
                         <div class="timing">Email : {{ $profile[0]->email_one }}</div>
                         <!--Social Box-->
                         <ul class="social-box">
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="{{'https://www.facebook.com/'.$social[0]->social_url}}"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="{{ $social[1]->social_url}}"><span class="fa fa-twitter"></span></a></li>
                             <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
                             <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
                         </ul>
@@ -103,10 +103,10 @@
                                             </li>
                                             <li><a href="services.html">Management</a></li>
                                             <li><a href="services.html">Factory</a></li>
-                                            <li><a href="services.html">Clients</a></li>
-                                            <li><a href="services.html">Gallery</a></li>
-                                            <li><a href="contact.html">Contact us</a></li>
-                                            <li><a href="contact.html">Visit Us</a></li>
+                                            <li><a href="{{ route('main.client') }}">Clients</a></li>
+                                            <li><a href="{{ route('main.gallery') }}">Gallery</a></li>
+                                            <li><a href="{{ route('main.contact') }}">Contact us</a></li>
+                                            <li><a href="{{ route('main.about') }}">About US</a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -122,4 +122,6 @@
                 
             </div>
         </div>
+
+
         <!--End Header Upper-->

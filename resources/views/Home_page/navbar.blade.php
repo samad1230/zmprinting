@@ -30,10 +30,10 @@
                                 </li>
                                 <li><a href="services.html">Management</a></li>
                                 <li><a href="services.html">Factory</a></li>
-                                <li><a href="services.html">Clients</a></li>
-                                <li><a href="services.html">Gallery</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                                <li><a href="contact.html">Visit Us</a></li>
+                                <li><a href="{{ route('main.client') }}">Clients</a></li>
+                                <li><a href="{{ route('main.gallery') }}">Gallery</a></li>
+                                <li><a href="{{ route('main.contact') }}">Contact us</a></li>
+                                <li><a href="{{ route('main.about') }}">About Us</a></li>
                             </ul>
                         </div>
                     </nav><!-- Main Menu End-->

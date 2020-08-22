@@ -35,10 +35,85 @@ class MainController extends Controller
         ->get();
         $profile = DB::table('profiles')->get();
         $category = DB::table('categories')->get();
-        return view('Home_page.welcome',compact('about','slider','product','ongoing','client','member','blog','profile','recentpost','category'));
-;
+        $social = DB::table('socials')->get();
+        return view('Home_page.welcome',compact('about','slider','product','ongoing','client','member','blog','profile','recentpost','category','social'));
+
     }
 
+    public function contact()
+    {
+        $client = DB::table('clients')->get();
+        $social = DB::table('socials')->get();
+        $profile = DB::table('profiles')->get();
+        $category = DB::table('categories')->get();
+        $about = DB::table('aboutus')->get();
+        $recentpost = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(10)
+        ->get();
+        $blog = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(2)
+        ->get();
+        return view('Home_page.contact',compact('client','profile','social','category','about','recentpost','blog'));
+    }
+
+
+    public function aboutus()
+    {
+        $client = DB::table('clients')->get();
+        $social = DB::table('socials')->get();
+        $profile = DB::table('profiles')->get();
+        $category = DB::table('categories')->get();
+        $about = DB::table('aboutus')->get();
+        $recentpost = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(10)
+        ->get();
+        $blog = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(2)
+        ->get();
+        return view('Home_page.aboutus',compact('client','profile','social','category','about','recentpost','blog'));
+    }
+
+    public function client()
+    {
+        $client = DB::table('clients')->get();
+        $social = DB::table('socials')->get();
+        $profile = DB::table('profiles')->get();
+        $category = DB::table('categories')->get();
+        $about = DB::table('aboutus')->get();
+        $recentpost = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(10)
+        ->get();
+        $blog = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(2)
+        ->get();
+        return view('Home_page.client',compact('client','profile','social','category','about','recentpost','blog'));
+    }
+
+
+    public function gallery()
+    {
+        $client = DB::table('clients')->get();
+        $social = DB::table('socials')->get();
+        $profile = DB::table('profiles')->get();
+        $category = DB::table('categories')->get();
+        $about = DB::table('aboutus')->get();
+        $gallery = DB::table('galleries')->get();
+        $recentpost = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(10)
+        ->get();
+        $blog = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(2)
+        ->get();
+        return view('Home_page.gallery',compact('client','profile','social','category','about','recentpost','blog','gallery'));
+    }
 
 }
 

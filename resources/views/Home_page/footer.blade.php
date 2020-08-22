@@ -33,12 +33,12 @@
                             <h2>Usefull Links</h2>
                            
                                 <ul class="list">
-                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="{{ route('main.about') }}">About Us</a></li>
                                     <li><a href="#">Meet Our Team</a></li>
                                     <li><a href="#">Case Studies</a></li>
-                                    <li><a href="#">Get a Quote</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{{ route('main.gallery') }}">Gallery</a></li>
+                                    <li><a href="{{ route('main.client') }}">Our Client</a></li>
+                                    <li><a href="{{ route('main.contact') }}">Contact Us</a></li>
                                 </ul>
                             
                         </div>
@@ -84,8 +84,8 @@
                     <!-- Social Column -->
                     <div class="social-column col-lg-6 col-md-12 col-sm-12">
                         <ul class="footer-nav">
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="{{'https://www.facebook.com/'.$social[0]->social_url}}"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="{{ $social[1]->social_url}}"><span class="fa fa-twitter"></span></a></li>
                             <li><a href="#"><span class="fa fa-skype"></span></a></li>
                             <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
                         </ul>
@@ -142,6 +142,7 @@
 <script src="{{asset('Client_layouts/js/owl.js')}}"></script>
 <script src="{{asset('Client_layouts/js/wow.js')}}"></script>
 <script src="{{asset('Client_layouts/js/slick.js')}}"></script>
+
 <script src="{{asset('Client_layouts/js/jquery-ui.js')}}"></script>
 <script src="{{asset('Client_layouts/js/script.js')}}"></script>
 <script src="{{asset('Client_layouts/js/color-settings.js')}}"></script>

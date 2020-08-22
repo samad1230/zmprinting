@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class SocialController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,9 @@ class SocialController extends Controller
      */
     public function index()
     {
-        //
+        
+        $socialdata = Social::all();
+        return view('Admin_view.sociallink',compact('socialdata'));
     }
 
     /**
@@ -35,7 +41,24 @@ class SocialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            'social_name'=>'required',
+            'social_url'=>'required',
+       ]);
+
+       $social = new Social();
+       $social ->social_name=$request->social_name;
+       $social ->social_url=$request->social_url;
+       $social->save();
+
+        $notification=array(
+             'messege'=>'Successfully Social Inserted',
+             'alert-type'=>'success'
+            );
+        return Redirect()->back()->with($notification);
+        
+
     }
 
     /**
@@ -57,7 +80,7 @@ class SocialController extends Controller
      */
     public function edit(Social $social)
     {
-        //
+        return response()->json([$social]);
     }
 
     /**
@@ -69,7 +92,11 @@ class SocialController extends Controller
      */
     public function update(Request $request, Social $social)
     {
-        //
+        $update_social = $social;
+        $update_social ->social_name=$request->social_name;
+        $update_social ->social_url=$request->social_url;
+        $update_social->save();
+        return back();
     }
 
     /**

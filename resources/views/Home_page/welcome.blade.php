@@ -12,7 +12,7 @@
                          <h2>{{@$row->slider_head}}</h2>
                         <div class="text">{{@$row->slider_details}}</div>
                         <div class="link-box">
-                            <a href="#" class="theme-btn btn-style-one">Our Service</a> <a href="#" class="theme-btn btn-style-three">Contact Us</a>
+                            <a href="{{ route('main.contact') }}" class="theme-btn btn-style-one">Our Service</a> <a href="{{ route('main.contact') }}" class="theme-btn btn-style-three">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         <div class="about_text">
                             {{@$about[0]->aboutus}}
                         </div>
-                        <a href="about.html" class="theme-btn btn-style-three">About More</a>
+                        <a href="{{ route('main.about') }}" class="theme-btn btn-style-three">About More</a>
                         
                         <!-- Counter Box -->
                         <div class="counter-box">
@@ -196,7 +196,7 @@
         <div class="auto-container">
             <h2>Get A <span class="theme_color">Solutions</span> For All <br> Printing</h2>
             <div class="text">We believe strongly that we can and must do things differently. <br> Our aim is to bring you news, perspectives.</div>
-            <a href="contact.html" class="theme-btn btn-style-four">Contact Us</a>
+            <a href="{{ route('main.contact') }}" class="theme-btn btn-style-four">Contact Us</a>
         </div>
     </section>
     <!-- End Call To Action Section -->
@@ -246,12 +246,11 @@
     <section class="call-to-action-section-two" style="background-image:url({{ URL::to(@$slider[0]->slider_image)}})">
         <div class="auto-container">
             <div class="clearfix">
-                
                 <div class="pull-left">
                     <h2>We tailor this service to your business, your goals and your budget</h2>
                 </div>
                 <div class="pull-right">
-                    <a href="contact.html" class="theme-btn btn-style-three">Success Track</a>
+                    <a href="{{ route('main.contact') }}" class="theme-btn btn-style-three">Success Track</a>
                 </div>
                 
             </div>
@@ -418,7 +417,7 @@
                 <!--Sponsors Carousel-->
                 <ul class="sponsors-carousel owl-carousel owl-theme">
                      @foreach ($client as $row)
-                         <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ URL::to($row->client_logo) }}" alt=""></a></figure></li>
+                         <li class="slide-item"><figure class="image-box"><a href="{{ route('main.client') }}"><img src="{{ URL::to($row->client_logo) }}" alt=""></a></figure></li>
                      @endforeach
                 </ul>
             </div>

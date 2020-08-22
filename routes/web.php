@@ -2,13 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
 // Route::get('/', function () {
 //     return view('Home_page.welcome');
 // });
 Route::get('/', 'MainController@index');
 Route::get('index', 'MainController@index');
+Route::get('home/contact', 'MainController@contact')->name('main.contact');
+Route::get('home/about', 'MainController@aboutus')->name('main.about');
+Route::get('home/client', 'MainController@client')->name('main.client');
+Route::get('home/gallery', 'MainController@gallery')->name('main.gallery');
+
+
+
 
 Auth::routes();
 //Auth::routes(['verify' => true, 'register' => false]);
@@ -69,4 +74,5 @@ Route::resource('factory', 'FactoryController');
 //Company Machine
 Route::resource('machine', 'MachineController');
 Route::resource('gallery', 'GalleryController');
+Route::post('updategallery','GalleryController@update'); 
 Route::resource('social', 'SocialController');

@@ -18,8 +18,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-         $blogdata = Blog::all();
-        //print_r($category);
+        $blogdata = Blog::all();
         return view('Admin_view.blog',compact('blogdata'));
     }
 
