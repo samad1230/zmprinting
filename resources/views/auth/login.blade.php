@@ -8,9 +8,10 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
-                            </a>
+                            <h2>ZM Printing & Design</h2>
+                           {{--  <a href="#">
+                                <img src="" alt="ZM Printing">
+                            </a> --}}
                         </div>
                         <div class="login-form">
                             <form method="POST" action="{{ route('login') }}">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Profile;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $mainprofile = Profile::all();
+        //print_r($category);
+        return view('home', compact('mainprofile'));
+        return view('layouts.app', compact('mainprofile'));
     }
 
     

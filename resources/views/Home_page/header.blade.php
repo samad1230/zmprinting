@@ -45,12 +45,12 @@
                     <!--Top Left-->
                     <div class="top-left">
                         <ul>
-                            <li><span class="icon fa fa-map-marker"></span> Uttara Dhaka Bangladesh</li>
+                            <li><span class="icon fa fa-map-marker"></span> {{ $profile[0]->address }}</li>
                         </ul>
                     </div>
                     <!--Top Right-->
                     <div class="top-right">
-                        <div class="timing">Email : </div>
+                        <div class="timing">Email : {{ $profile[0]->email_one }}</div>
                         <!--Social Box-->
                         <ul class="social-box">
                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -69,7 +69,10 @@
                 <div class="clearfix">
                     
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="{{ url('/') }}"><img src="Client_layouts/images/logo.png" alt="" title=""></a></div>
+                        <div class="logo"><a href="{{ url('/') }}"><img src="{{ URL::to($profile[0]->logo) }}" alt="" title=""></a>
+                                
+                        </div>
+                        
                     </div>
                     
                     <div class="pull-right upper-right">
@@ -93,14 +96,9 @@
                                             </li>
                                             <li class="dropdown"><a href="#">Products</a>
                                                 <ul>
-                                                    <li><a href="about.html">Baseball Cap</a></li>
-                                                    <li><a href="faq.html">Camo Print Cap</a></li>
-                                                    <li><a href="team.html">Flat Visor Cap</a></li>
-                                                    <li><a href="testimonial.html">Heavy Wash Cap</a></li>
-                                                    <li><a href="comming-soon.html">Print Cap</a></li>
-                                                    <li><a href="comming-soon.html">Trucker Mesh Baseball Cap</a></li>
-                                                    <li><a href="comming-soon.html">Others Cap</a></li>
-                                                    <li><a href="comming-soon.html">Materials</a></li>
+                                                    @foreach ($category as $catarr)
+                                                        <li><a href="#">{{ $catarr->category_name }}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </li>
                                             <li><a href="services.html">Management</a></li>

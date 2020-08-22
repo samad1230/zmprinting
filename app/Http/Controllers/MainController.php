@@ -16,9 +16,30 @@ class MainController extends Controller
     	->get();
     	$product = DB::table('products')
     	->orderBy('id', 'desc')
+        ->where('status',1)
     	->get();
-        return view('Home_page.welcome',compact('about','slider','product'));
+        $ongoing = DB::table('products')
+        ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+        ->select('products.*', 'categories.category_name')
+        ->where('status',2)
+        ->get();
+        $client = DB::table('clients')->get();
+        $member = DB::table('members')->get();
+        $blog = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(2)
+        ->get();
+        $recentpost = DB::table('blogs')
+             ->orderBy('id', 'desc')
+             ->limit(10)
+        ->get();
+        $profile = DB::table('profiles')->get();
+        $category = DB::table('categories')->get();
+        return view('Home_page.welcome',compact('about','slider','product','ongoing','client','member','blog','profile','recentpost','category'));
+;
     }
 
 
 }
+
+            

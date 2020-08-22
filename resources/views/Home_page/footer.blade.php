@@ -1,5 +1,5 @@
  <!--Main Footer-->
-    <footer class="main-footer" style="background-image:url(Client_layouts/images/background/10.jpg)">
+    <footer class="main-footer" style="background-image:url({{ URL::to(@$slider[1]->slider_image)}})">
     
         <div class="auto-container">
         
@@ -10,100 +10,60 @@
                     <!--Footer Column-->
                     <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                         <div class="footer-widget logo-widget">
-                            <div class="logo">
-                                <a href="index-2.html"><img src="Client_layouts/images/footer-logo.png" alt="" /></a>
+                            <div class="logo logo-box">
+                                <a href="index-2.html"><img src="{{ URL::to($profile[0]->logo) }}" alt="" /></a>
+                                <h3>{{ $profile[0]->company_name }}</h3>
                             </div>
-                            <div class="text">The Buliten industry has 18+ years of experience with providing wide range of specialty services, We  involved in servicing... <a href="#">Read More.</a></div>
+                            <div class="text"><a href="">{{ $about[0]->aboutus }}</a></div>
+
                             <ul class="list-style-one">
-                                <li><span class="icon flaticon-map-1"></span>Global Street 5004, Newyork, United States.</li>
-                                <li><span class="icon flaticon-mail"></span>Office & Factory: +0 625-07520-6644 & 6655 </li>
+                                <li><span class="icon flaticon-map-1"></span>{{ $profile[0]->address }}</li>
+                                <li><span class="icon flaticon-mail"></span>{{ $profile[0]->contact }}</li>
+                                <li><span class="icon flaticon-mail"></span>{{ $profile[0]->email_one }}</li>
                             </ul>
                         </div>
                     </div>
+                    <div class="footer-column col-lg-1 col-md-6 col-sm-12">
+                        
+                    </div>  
                     
                     <!--Footer Column-->
-                    <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                    <div class="footer-column col-lg-3 col-md-6 col-sm-12">
                         <div class="footer-widget links-widget">
                             <h2>Usefull Links</h2>
-                            <div class="row clearfix">
-                                <div class="column col-lg-6 col-md-6 col-sm-12">
-                                    <ul class="list">
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Meet Our Team</a></li>
-                                        <li><a href="#">Case Studies</a></li>
-                                        <li><a href="#">Get a Quote</a></li>
-                                        <li><a href="#">Testimonials</a></li>
-                                        <li><a href="#">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                                <div class="column col-lg-6 col-md-6 col-sm-12">
-                                    <ul class="list">
-                                        <li><a href="#">Market Sectors</a></li>
-                                        <li><a href="#">Industries</a></li>
-                                        <li><a href="#">News</a></li>
-                                        <li><a href="#">Why Choose Us</a></li>
-                                        <li><a href="#">Sustainability</a></li>
-                                        <li><a href="#">Terms & Condition</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                           
+                                <ul class="list">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Meet Our Team</a></li>
+                                    <li><a href="#">Case Studies</a></li>
+                                    <li><a href="#">Get a Quote</a></li>
+                                    <li><a href="#">Testimonials</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            
                         </div>
-                    </div>  
+                    </div> 
+                    
                     
                     <!--Footer Column-->
                     <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                         <div class="footer-widget news-widget">
                             <h2>Recent Post</h2>
                             <div class="single-item-carousel owl-carousel owl-theme">
+                               @foreach ($recentpost as $b_row)
                                 <div class="slide">
-                                    <!--News Widget Block-->
                                     <div class="news-widget-block">
                                         <div class="widget-inner">
                                             <div class="image">
-                                                <img src="Client_layouts/images/resource/news-image-1.jpg" alt="" />
+                                                <img src="{{ URL::to($b_row->image) }}" alt="" />
                                             </div>
-                                            <div class="post-date">October 05, 2018</div>
-                                            <h3><a href="blog-detail.html">We are Best for Industrial and Business Solution.</a></h3>
-                                        </div>
-                                    </div>
-                                    
-                                    <!--News Widget Block-->
-                                    <div class="news-widget-block">
-                                        <div class="widget-inner">
-                                            <div class="image">
-                                                <img src="Client_layouts/images/resource/news-image-2.jpg" alt="" />
-                                            </div>
-                                            <div class="post-date">August 14, 2018</div>
-                                            <h3><a href="blog-detail.html">We won the award for best factory of the year.</a></h3>
+                                            <div class="post-date">{{ $b_row->created_at }}</div>
+                                            <h3><a href="#">{{ $b_row->title }}</a></h3>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="slide">
-                                    <!--News Widget Block-->
-                                    <div class="news-widget-block">
-                                        <div class="widget-inner">
-                                            <div class="image">
-                                                <img src="Client_layouts/images/resource/news-image-1.jpg" alt="" />
-                                            </div>
-                                            <div class="post-date">October 05, 2018</div>
-                                            <h3><a href="blog-detail.html">We are Best for Industrial and Business Solution.</a></h3>
-                                        </div>
-                                    </div>
-                                    
-                                    <!--News Widget Block-->
-                                    <div class="news-widget-block">
-                                        <div class="widget-inner">
-                                            <div class="image">
-                                                <img src="Client_layouts/images/resource/news-image-2.jpg" alt="" />
-                                            </div>
-                                            <div class="post-date">August 14, 2018</div>
-                                            <h3><a href="blog-detail.html">We won the award for best factory of the year.</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                                 @endforeach
+                           </div>
                         </div>
                     </div>  
                     
@@ -118,7 +78,7 @@
                     
                     <!-- Copyright Column -->
                     <div class="copyright-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="copyright"><a href="https://www.templateshub.net">Templates Hub</a></div>
+                        <div class="copyright"><a href="https://www.poweritbd.com">Power IT BD</a></div>
                     </div>
                     
                     <!-- Social Column -->

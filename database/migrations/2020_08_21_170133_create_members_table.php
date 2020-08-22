@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFactoryMachinesTable extends Migration
+class CreateMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateFactoryMachinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('factory_machines', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('section');
-            $table->integer('machines_no');
+            $table->string('name');
+            $table->string('designation');
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateFactoryMachinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factory_machines');
+        Schema::dropIfExists('members');
     }
 }

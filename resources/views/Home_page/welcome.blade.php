@@ -6,11 +6,11 @@
      <section class="main-slider">
         <div class="main-slider-carousel owl-carousel owl-theme">
             @foreach ($slider as $row) 
-            <div class="slide" style="background-image:url({{ URL::to($row->slider_image)}})">
+            <div class="slide" style="background-image:url({{ URL::to(@$row->slider_image)}})">
                 <div class="auto-container">
                     <div class="content clearfix">
-                         <h2>{{$row->slider_head}}</h2>
-                        <div class="text">{{$row->slider_details}}</div>
+                         <h2>{{@$row->slider_head}}</h2>
+                        <div class="text">{{@$row->slider_details}}</div>
                         <div class="link-box">
                             <a href="#" class="theme-btn btn-style-one">Our Service</a> <a href="#" class="theme-btn btn-style-three">Contact Us</a>
                         </div>
@@ -32,7 +32,7 @@
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="{{ URL::to($about[0]->images) }}">
+                            <img src="{{ URL::to(@$about[0]->images)}}">
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,10 @@
                                 <h2>ZM Printimg & Design</h2>
                             </div>
                         </div>
-                        <div class="about_text">{{$about[0]->aboutus}}</div>
+                        
+                        <div class="about_text">
+                            {{@$about[0]->aboutus}}
+                        </div>
                         <a href="about.html" class="theme-btn btn-style-three">About More</a>
                         
                         <!-- Counter Box -->
@@ -54,7 +57,7 @@
                             
                             <div class="fact-counter">
                                 <div class="row clearfix">
-                                
+                           
                                     <!--Column-->
                                     <div class="column counter-column col-lg-4 col-md-4 col-sm-12">
                                         <div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
@@ -99,7 +102,7 @@
     </section>
     <!-- End Welcome Section -->
 
-        <section class="project-section">
+    <section class="project-section">
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title">
@@ -137,17 +140,15 @@
             </div>
             
             <div class="row clearfix">
-            
-                <!-- Services Block -->
                 <div class="services-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="oil-gas.html"><img src="Client_layouts/images/resource/service-1.jpg" alt="" /></a>
+                            <a href="#"><img src="{{ 'media/common/printing.jpg' }}" alt="" /></a>
                         </div>
                         <div class="lower-content">
                             <div class="upper-layer"></div>
                             <div class="lower-layer"></div>
-                            <h3><a href="oil-gas.html">Oil and Gass Energy</a></h3>
+                            <h3><a href="oil-gas.html">Printing</a></h3>
                             <div class="text">Russia has become a major global player on my different levels in market....</div>
                         </div>
                     </div>
@@ -157,12 +158,12 @@
                 <div class="services-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="civil.html"><img src="Client_layouts/images/resource/service-2.jpg" alt="" /></a>
+                            <a href="#"><img src="{{ 'media/common/design.jpg' }}" alt="" /></a>
                         </div>
                         <div class="lower-content">
                             <div class="upper-layer"></div>
                             <div class="lower-layer"></div>
-                            <h3><a href="civil.html">Mechanical Engineering</a></h3>
+                            <h3><a href="#">Design</a></h3>
                             <div class="text">Provide a wide range of services related to the basic line of engineering.....</div>
                         </div>
                     </div>
@@ -172,62 +173,26 @@
                 <div class="services-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="chemical-research.html"><img src="Client_layouts/images/resource/service-3.jpg" alt="" /></a>
+                            <a href="#"><img src="{{ 'media/common/Embroidery.png' }}" alt="" /></a>
                         </div>
                         <div class="lower-content">
                             <div class="upper-layer"></div>
                             <div class="lower-layer"></div>
-                            <h3><a href="chemical-research.html">Chemical Research</a></h3>
+                            <h3><a href="#">Embroidery</a></h3>
                             <div class="text">All chemical research involves one or moor core activities such so projects.....</div>
                         </div>
                     </div>
                 </div>
                 
             </div>
-            
-            <div class="row clearfix">
-                
-                    <!-- Services Block Two -->
-                    <div class="services-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="Client_layouts/images/resource/service-4.jpg" alt="" />
-                            </div>
-                            <h3><a href="agricultural-research.html">Printing</a></h3>
-                            <div class="text">Modern society consumes large amounts of fuel,</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Services Block Two -->
-                    <div class="services-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <img src="Client_layouts/images/resource/service-5.jpg" alt="" />
-                            </div>
-                            <h3><a href="agricultural-research.html">Design</a></h3>
-                            <div class="text">Agriculrure processing is the transformation ...</div>
-                        </div>
-                    </div>  
-                    
-                    <!-- Services Block Two -->
-                    <div class="services-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="Client_layouts/images/resource/service-6.jpg" alt="" />
-                            </div>
-                            <h3><a href="agricultural-research.html">Screen Print</a></h3>
-                            <div class="text">Modern society consumes large amounts of fuel, </div>
-                        </div>
-                    </div>
-                
-                </div>  
-            
+
         </div>
     </section>
     <!-- End Services Section -->
     
+
     <!-- Call To Action Section -->
-    <section class="call-to-action-section" style="background-image:url(media/slider/190820_182118.jpg);">
+    <section class="call-to-action-section" style="background-image:url({{ URL::to(@$slider[0]->slider_image)}});">
         <div class="auto-container">
             <h2>Get A <span class="theme_color">Solutions</span> For All <br> Printing</h2>
             <div class="text">We believe strongly that we can and must do things differently. <br> Our aim is to bring you news, perspectives.</div>
@@ -235,7 +200,8 @@
         </div>
     </section>
     <!-- End Call To Action Section -->
-    
+
+
 
     <section class="project-section">
         <div class="auto-container">
@@ -247,22 +213,22 @@
             </div>
             
             <div class="four-item-carousel owl-carousel owl-theme">
-                
-                <!-- Project Block -->
+                @foreach ($ongoing as $go_data)
+                {{-- <?php dd($go_data); ?> --}}
                 <div class="project-block">
                     <div class="inner-box">
                         <div class="image">
-                            <img src="Client_layouts/images/resource/project-1.jpg" alt="" />
+                            <img src="{{ url($go_data->pd_image) }}" alt="" />
                             <!-- Overlay Box -->
                             <div class="overlay-box">
                                 <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-1.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
+                                    <a class="plus" href="{{ url($go_data->pd_image) }}" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
+                                    <a class="link" href="#"><span class="icon flaticon-link"></span></a>
                                 </div>
                                 <div class="overlay-inner">
                                     <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
+                                        <h3><a href="#">{{$go_data->pd_name}}</a></h3>
+                                        <div class="category">{{$go_data->category_name}}</div>
                                     </div>
                                 </div>
                             </div>  
@@ -270,176 +236,14 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="Client_layouts/images/resource/project-2.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-2.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
-                                </div>
-                                <div class="overlay-inner">
-                                    <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="Client_layouts/images/resource/project-3.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-3.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
-                                </div>
-                                <div class="overlay-inner">
-                                    <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="Client_layouts/images/resource/project-4.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-4.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
-                                </div>
-                                <div class="overlay-inner">
-                                    <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="Client_layouts/images/resource/project-1.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-1.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
-                                </div>
-                                <div class="overlay-inner">
-                                    <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="Client_layouts/images/resource/project-2.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-2.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
-                                </div>
-                                <div class="overlay-inner">
-                                    <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="Client_layouts/images/resource/project-3.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-3.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
-                                </div>
-                                <div class="overlay-inner">
-                                    <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Block -->
-                <div class="project-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="Client_layouts/images/resource/project-4.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="icons">
-                                    <a class="plus" href="Client_layouts/images/resource/project-4.jpg" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                    <a class="link" href="team.html"><span class="icon flaticon-link"></span></a>
-                                </div>
-                                <div class="overlay-inner">
-                                    <div class="overlay-content">
-                                        <h3><a href="team.html">Pre Construction</a></h3>
-                                        <div class="category">Agriculture, Chemical</div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </div>
-                    </div>
-                </div>
-                
+                 @endforeach
             </div>
-            
         </div>
     </section>
     <!-- End Project Section -->
     
     <!--Call To Action Section Two-->
-    <section class="call-to-action-section-two" style="background-image:url(Client_layouts/images/background/1.jpg)">
+    <section class="call-to-action-section-two" style="background-image:url({{ URL::to(@$slider[0]->slider_image)}})">
         <div class="auto-container">
             <div class="clearfix">
                 
@@ -478,132 +282,22 @@
                 <div class="carousel-column col-lg-9 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="team-carousel owl-carousel owl-theme">
-                            
-                            <!--Team Block-->
+                            @foreach ($member as $mrow)
                             <div class="team-block">
                                 <div class="inner-box">
-                                    <div class="border-one"></div>
-                                    <div class="border-two"></div>
                                     <div class="image">
-                                        <a href="team.html"><img src="Client_layouts/images/resource/team-1.png" alt="" /></a>
+                                        <a href="#"><img src="{{ URL::to($mrow->image) }}"></a>
                                         <ul class="social-icons">
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
+                                            <li>{{ $mrow->name }}</span></a></li>
                                         </ul>
                                     </div>
                                     <div class="lower-box">
-                                        <h3><a href="team.html">Monica Wagase</a></h3>
-                                        <div class="designation">Camical officer</div>
+                                        <h3><a href="#">{{ $mrow->designation }}</a></h3>
+                                        <div class="designation">{{ $mrow->email }}</div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!--Team Block-->
-                            <div class="team-block">
-                                <div class="inner-box">
-                                    <div class="border-one"></div>
-                                    <div class="border-two"></div>
-                                    <div class="image">
-                                        <a href="team.html"><img src="Client_layouts/images/resource/team-2.png" alt="" /></a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="lower-box">
-                                        <h3><a href="team.html">Monica Wagase</a></h3>
-                                        <div class="designation">Camical officer</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!--Team Block-->
-                            <div class="team-block">
-                                <div class="inner-box">
-                                    <div class="border-one"></div>
-                                    <div class="border-two"></div>
-                                    <div class="image">
-                                        <a href="team.html"><img src="Client_layouts/images/resource/team-3.png" alt="" /></a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="lower-box">
-                                        <h3><a href="team.html">Monica Wagase</a></h3>
-                                        <div class="designation">Camical officer</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!--Team Block-->
-                            <div class="team-block">
-                                <div class="inner-box">
-                                    <div class="border-one"></div>
-                                    <div class="border-two"></div>
-                                    <div class="image">
-                                        <a href="team.html"><img src="Client_layouts/images/resource/team-1.png" alt="" /></a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="lower-box">
-                                        <h3><a href="team.html">Monica Wagase</a></h3>
-                                        <div class="designation">Camical officer</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!--Team Block-->
-                            <div class="team-block">
-                                <div class="inner-box">
-                                    <div class="border-one"></div>
-                                    <div class="border-two"></div>
-                                    <div class="image">
-                                        <a href="team.html"><img src="Client_layouts/images/resource/team-2.png" alt="" /></a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="lower-box">
-                                        <h3><a href="team.html">Monica Wagase</a></h3>
-                                        <div class="designation">Camical officer</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!--Team Block-->
-                            <div class="team-block">
-                                <div class="inner-box">
-                                    <div class="border-one"></div>
-                                    <div class="border-two"></div>
-                                    <div class="image">
-                                        <a href="team.html"><img src="Client_layouts/images/resource/team-3.png" alt="" /></a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="lower-box">
-                                        <h3><a href="team.html">Monica Wagase</a></h3>
-                                        <div class="designation">Camical officer</div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                             
                         </div>
                     </div>
@@ -630,68 +324,40 @@
                                 <h2>Company Blogs</h2>
                             </div>
                         </div>
-                        
-                        <!-- News Block -->
-                        <div class="news-block">
-                            <div class="inner-box">
-                                <div class="row clearfix">
-                                    <!-- Image Column -->
-                                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
-                                        <div class="column-inner">
-                                            <div class="image">
-                                                <img src="Client_layouts/images/resource/news-1.jpg" alt="" />
-                                                <div class="image-layer" style="background-image:url(Client_layouts/images/resource/news-1.jpg)"><a class="overlay-link" href="blog-single.html"></a></div>
+                        @foreach ($blog as $b_row)
+                     
+                            {{-- <?php dd($b_row); ?> --}}
+                      
+                            <div class="news-block">
+                                <div class="inner-box">
+                                    <div class="row clearfix">
+                                        <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                                            <div class="column-inner">
+                                                <div class="image">
+                                                    <img src="{{ URL::to($b_row->image) }}" alt="" />
+                                                    <div class="image-layer" style="background-image:url({{ URL::to($b_row->image) }})"><a class="overlay-link" href="#"></a></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Content Column -->
-                                    <div class="content-column col-lg-6 col-md-6 col-sm-12">
-                                        <div class="column-inner">
-                                            <ul class="post-info">
-                                                <li>24th August 2019</li>
-                                                <li>Machnical Engineering</li>
-                                            </ul>
-                                            <h3><a href="blog-single.html">Collaboration through advanced touch base UI</a></h3>
-                                            <div class="text">Baseline the procedure and samepage your department. Golden goose. Social currency. Those options are already baked in with this model run it up the flagpole.</div>
-                                        </div>
-                                    </div>  
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- News Block -->
-                        <div class="news-block">
-                            <div class="inner-box">
-                                <div class="row clearfix">
-                                    <!-- Image Column -->
-                                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
-                                        <div class="column-inner">
-                                            <div class="image">
-                                                <img src="Client_layouts/images/resource/news-2.jpg" alt="" />
-                                                <div class="image-layer" style="background-image:url(Client_layouts/images/resource/news-1.jpg)"><a class="overlay-link" href="blog-single.html"></a></div>
+                                        <div class="content-column col-lg-6 col-md-6 col-sm-12">
+                                            <div class="column-inner">
+                                                <ul class="post-info">
+                                                    <li>{{ $b_row->created_at }}</li>
+                                                    <li></li>
+                                                </ul>
+                                                <h3><a href="#">{{ $b_row->title }}</a></h3>
+                                                <div class="text">{{ $b_row->blog_content }}</div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!-- Content Column -->
-                                    <div class="content-column col-lg-6 col-md-6 col-sm-12">
-                                        <div class="column-inner">
-                                            <ul class="post-info">
-                                                <li>24th August 2019</li>
-                                                <li>Machnical Engineering</li>
-                                            </ul>
-                                            <h3><a href="blog-single.html">Lean into that problem proceduralize.</a></h3>
-                                            <div class="text">Baseline the procedure and samepage your department. Golden goose. Social currency. Those options are already baked in with this model run it up the flagpole.</div>
-                                        </div>
-                                    </div>  
+                                        </div>  
+                                    </div> 
                                 </div>
                             </div>
-                        </div>
-                        
+                        @endforeach
                     </div>
                 </div>
                 
                 <!-- Form Column -->
-                <div class="form-column" style="background-image:url(Client_layouts/images/background/2.jpg)">
+                <div class="form-column" style="background-image:url({{ URL::to(@$slider[1]->slider_image)}})">
                     <div class="inner-column">
                         <!-- Sec Title -->
                         <div class="sec-title light">
@@ -705,7 +371,8 @@
                         <div class="quote-form">
                                 
                             <!--Contact Form-->
-                            <form method="post" action="http://ary-themes.com/html/buliten/contact.html">
+                            <form method="post" action="">
+                                @csrf
                                 <div class="row clearfix">
                                 
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
@@ -713,22 +380,14 @@
                                     </div>
                                     
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="text" name="email" placeholder="Email" required>
+                                        <input type="email" name="email" placeholder="Email" required>
                                     </div>
                                     
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                         <input type="text" name="phone" placeholder="Phone" required>
                                     </div>
-                                    
-                                    <!--Form Group-->
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <select class="custom-select-box">
-                                            <option>Service Required</option>
-                                            <option>Service One</option>
-                                            <option>Service Two</option>
-                                            <option>Service Three</option>
-                                            <option>Service Four</option>
-                                        </select>
+                                        <input type="text" name="address" placeholder="Address" required>
                                     </div>
                                     
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -758,17 +417,15 @@
             <div class="sponsors-outer">
                 <!--Sponsors Carousel-->
                 <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/4.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/5.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="Client_layouts/images/clients/3.png" alt=""></a></figure></li>
+                     @foreach ($client as $row)
+                         <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ URL::to($row->client_logo) }}" alt=""></a></figure></li>
+                     @endforeach
                 </ul>
             </div>
             
         </div>
     </section>
 @endsection
+
+
+ 

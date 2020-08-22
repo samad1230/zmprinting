@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFactorysTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateFactorysTable extends Migration
      */
     public function up()
     {
-        Schema::create('factorys', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('factory_on');
-            $table->integer('machine_basic');
-            $table->integer('machine_other');
-            $table->integer('production_apacity');
-            $table->integer('employe_male');
-            $table->integer('employe_female');
+            $table->string('client_name');
+            $table->string('client_logo');
+            $table->string('client_url');
+            $table->string('client_address');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateFactorysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factorys');
+        Schema::dropIfExists('clients');
     }
 }

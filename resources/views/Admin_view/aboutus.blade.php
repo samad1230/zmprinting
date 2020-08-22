@@ -137,7 +137,7 @@
                               </ul>
                           </div>
                       @endif
-                    <form action="{{ url('updateabout/'.$about[0]->id) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+                    <form action="{{ url('updateabout') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
                         
                         @csrf
                         <input type="hidden" name="id" id="about_id">

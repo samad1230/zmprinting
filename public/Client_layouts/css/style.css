@@ -428,12 +428,30 @@ img{
 
 /*.preloader{ position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:999999; background-color:#ffffff; background-position:center center; background-repeat:no-repeat; background-image:url(../images/icons/preloader.svg); background-size:120px;}
 */
+
+
 img{
 	display:inline-block;
 	max-width:100%;
 	height:auto;	
 }
 
+.logo-box img{
+	display:inline-block;
+	width: 65px;
+    height: 62px;
+}
+
+.logo-box h3{
+    position: absolute;
+    font-size: 23px;
+    font-weight: bold;
+    color: #2700ff;
+    margin-left: 75px;
+    margin-top: -42px;
+    width: max-content;
+    z-index: 99999999999999;
+}
 /*** 
 
 ====================================================================
@@ -1674,7 +1692,8 @@ img{
 }
 
 .sticky-header .logo{
-	padding:7px 0px 7px;
+	/*padding:7px 0px 7px;*/
+	padding: 3px 0px 0px;
 }
 
 .fixed-header .sticky-header{
@@ -3228,11 +3247,14 @@ img{
 	-webkit-transition:all 0.6s ease;
 	-ms-transition:all 0.6s ease;
 	-o-transition:all 0.6s ease;
+
 }
 
 .team-block .inner-box .image img{
 	position:relative;
-	width:100%;
+	/*width:100%;*/
+	height: 330px;
+    width: 350px;
 	display:block;
 }
 
@@ -3251,6 +3273,8 @@ img{
 	-webkit-transition:all 0.6s ease;
 	-ms-transition:all 0.6s ease;
 	-o-transition:all 0.6s ease;
+	color: white;
+    font-size: 16px;
 }
 
 .team-block .inner-box .image .social-icons li{
@@ -3863,6 +3887,7 @@ img{
 .main-footer .footer-widget{
 	position:relative;
 	margin-bottom:40px;
+	margin-left: 12px;
 }
 
 .main-footer .widgets-section{
@@ -3895,14 +3920,20 @@ img{
 .main-footer .logo-widget .logo{
 	position:relative;
 	margin-bottom:20px;
+
 }
 
 .main-footer .logo-widget .text{
-	position:relative;
-	color:#bbbbbb;
-	font-size:16px;
-	line-height:1.8em;
-	margin-bottom:25px;
+	position: relative;
+    color: #bbbbbb;
+    font-size: 16px;
+    line-height: 1.8em;
+    margin-bottom: 25px;
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .main-footer .logo-widget .text a{

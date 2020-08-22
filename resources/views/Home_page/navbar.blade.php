@@ -2,10 +2,12 @@
         <div class="sticky-header">
             <div class="auto-container clearfix">
                 <!--Logo-->
-                <div class="logo pull-left">
-                    <a href="{{ url('/') }}" class="img-responsive"><img src="Client_layouts/images/logo-small.png" alt="" title=""></a>
+                <div class="logo pull-left logo-box">
+                    <a href="{{ url('/') }}" class="img-responsive"><img src="{{ URL::to($profile[0]->logo) }}" alt="" title=""></a>
+                    <h3>{{ $profile[0]->company_name }}</h3>
                 </div>
                 
+
                 <!--Right Col-->
                 <div class="right-col pull-right">
                     <!-- Main Menu -->
@@ -21,14 +23,9 @@
                                 <li class="current"><a href="{{ url('/') }}">Home</a></li>
                                 <li class="dropdown"><a href="#">Products</a>
                                     <ul>
-                                        <li><a href="about.html">Baseball Cap</a></li>
-                                        <li><a href="faq.html">Camo Print Cap</a></li>
-                                        <li><a href="team.html">Flat Visor Cap</a></li>
-                                        <li><a href="testimonial.html">Heavy Wash Cap</a></li>
-                                        <li><a href="comming-soon.html">Print Cap</a></li>
-                                        <li><a href="comming-soon.html">Trucker Mesh Baseball Cap</a></li>
-                                        <li><a href="comming-soon.html">Others Cap</a></li>
-                                        <li><a href="comming-soon.html">Materials</a></li>
+                                        @foreach ($category as $catarr)
+                                            <li><a href="#">{{ $catarr->category_name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="services.html">Management</a></li>

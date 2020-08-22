@@ -17,13 +17,14 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('pd_name');
             $table->integer('category_id');
+            $table->integer('status');
             $table->string('pd_image');
-            $table->string('fabric');
-            $table->string('closure');
-            $table->string('embroidery');
-            $table->string('printing');
-            $table->string('shape');
-            $table->string('rate');
+            $table->string('fabric')->nullable();
+            $table->string('details');
+            $table->string('embroidery')->nullable();
+            $table->string('printing')->nullable();
+            $table->string('shape')->nullable();
+            $table->string('rate')->nullable();
             $table->timestamps();
         });
     }
